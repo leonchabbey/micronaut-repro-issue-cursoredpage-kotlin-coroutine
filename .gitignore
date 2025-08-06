@@ -1,0 +1,61 @@
+# Gradle build files
+.gradle/
+build/
+out/
+
+# Gradle wrapper
+gradle/wrapper/gradle-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.iml.iml
+*.ipr
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# Kotlin specific - compiled class files
+*.class
+*.kotlin_module
+
+# Generated files by Micronaut and kapt
+build/
+
+# Temporary files
+*.log
+
+# Docker
+docker-compose.override.yml
+**/pg_data/
+# Ignore named volumes metadata if backed by host directories
+docker-compose.override.yml
+docker-compose.override.yml~
+
+# Ignore PostgreSQL data directory if bind mounted to host
+pg_data/
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Flyway migration output (optional, usually migrations are source controlled)
+# but if you generate reports or if you want to ignore:
+flyway-reports/
+
+# Others
+*.swp
+*.swo

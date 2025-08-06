@@ -1,0 +1,15 @@
+micronaut:
+  application:
+    name: demo
+
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:5469/test_db
+    username: micronaut
+    password: password
+    driverClassName: org.postgresql.Driver
+
+flyway:
+  datasources:
+    default:
+      enabled: true
