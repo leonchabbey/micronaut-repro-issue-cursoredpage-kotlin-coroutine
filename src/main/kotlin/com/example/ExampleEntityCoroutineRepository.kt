@@ -4,15 +4,12 @@ import io.micronaut.data.jdbc.annotation.JdbcRepository
 import io.micronaut.data.model.CursoredPage
 import io.micronaut.data.model.CursoredPageable
 import io.micronaut.data.model.query.builder.sql.Dialect
+import io.micronaut.data.repository.PageableRepository
 import io.micronaut.data.repository.kotlin.CoroutineCrudRepository
 import java.util.*
 
 
 @JdbcRepository(dialect = Dialect.POSTGRES)
-/*
- * kept CoroutineCrudRepository here to make sure the issue doesn't come from it.
- * We can use PageableRepository instead, or CrudRepository, it will still work.
- */
-abstract class ExampleEntityRepository : CoroutineCrudRepository<ExampleEntity, UUID> {
-    abstract fun find(pageable: CursoredPageable): CursoredPage<ExampleEntity>
+abstract class ExampleEntityCoroutineRepository : CoroutineCrudRepository<ExampleEntity, UUID> {
+    abstract suspend fun find(pageable: CursoredPageable): CursoredPage<ExampleEntity>
 }
